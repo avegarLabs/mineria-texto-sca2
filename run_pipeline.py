@@ -11,7 +11,7 @@ y deja todo en una carpeta de salida por corpus, lista para que un LLM (vía el 
 'redactar-cuartilla-investigacion' en opencode) redacte la cuartilla.
 
 Uso:
-    python run_pipeline.py data/sample_corpus.csv -o salida --title "Corpus MRA"
+    python run_pipeline.py data/corpus.csv -o salida --title "Corpus MRA"
     python run_pipeline.py corpus_tre.csv -o salida_tre --topics 4 --use-bertopic
 """
 import argparse, os, sys

@@ -25,9 +25,8 @@ mineria-texto-sca2/
 ├── mineria_texto.py          # minería -> materia_prima.md
 ├── figuras_mineria.py        # red de co-ocurrencia + barras de temas
 ├── run_pipeline.py           # orquestador (minería + figuras en un paso)
-├── data/
-│   ├── sample_corpus.csv            # corpus mínimo de ejemplo (títulos)
-│   └── wos_miembros_inferiores.csv  # corpus real (Web of Science, 77 docs)
+├── data/                     # tus corpus de entrada (.csv / .md), no se versionan
+│   └── md_files/             # carpeta para los .md del paper-analyzer-mcp
 ├── docs/
 │   └── INTEGRACION_OPENCODE.md   # guía del skill + opencode
 └── .opencode/
@@ -105,8 +104,13 @@ python lector_md_mcp.py carpeta_md/ -o corpus_mcp.csv
 ## Uso rápido (un solo comando)
 
 ```bash
-python run_pipeline.py data/sample_corpus.csv -o salida --title "Corpus de ejemplo"
+python run_pipeline.py data/corpus.csv -o salida --title "Mi corpus"
 ```
+
+`data/corpus.csv` es tu propio corpus: expórtalo de Scopus, Web of Science, PubMed, etc.
+(ver [Formato del CSV de entrada](#formato-del-csv-de-entrada)) o genéralo con `recolector.py`.
+El repositorio no incluye datos; los `.csv` y `.md` que pongas en `data/` están en
+`.gitignore` y no se suben.
 
 Genera en `salida/`: `materia_prima.md`, `red_coocurrencia.png`, `barras_temas.png`.
 
@@ -117,10 +121,10 @@ Si no hay modelo instalado, el pipeline avisa y continúa sin lematizar.
 python run_pipeline.py data/corpus_mra.csv -o salida_mra --title "Corpus MRA" --lematizar
 ```
 
-### Ejecutar el ejemplo incluido (corpus real de Web of Science)
+### Ejemplo con un corpus de Web of Science
 
-El paquete trae un corpus real (`data/wos_miembros_inferiores.csv`, 77 documentos). Con el
-entorno activado:
+Exporta de Web of Science los registros con resúmenes en CSV (p. ej.
+`data/wos_miembros_inferiores.csv`) y, con el entorno activado:
 
 ```bash
 python run_pipeline.py data/wos_miembros_inferiores.csv -o salida --title "Miembros inferiores (WoS)" --lematizar

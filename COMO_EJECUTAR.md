@@ -36,7 +36,8 @@ modelo `en_core_web_sm` (necesario para `--lematizar`). Cuando el entorno esté 
 
 ## 2. Ejemplo A — Minería desde un CSV
 
-El paquete ya incluye un corpus real de Web of Science en `data/wos_miembros_inferiores.csv`.
+Coloca tu corpus exportado (p. ej. de Web of Science, con resúmenes) en `data/`, por ejemplo
+`data/wos_miembros_inferiores.csv`. El repositorio no incluye datos.
 
 ```bash
 python run_pipeline.py data/wos_miembros_inferiores.csv -o salida_csv --title "Miembros inferiores (WoS)" --lematizar

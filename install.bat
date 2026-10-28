@@ -31,11 +31,11 @@ echo ============================================================
 echo  Listo. Para empezar, en esta misma carpeta:
 echo.
 echo    .venv\Scripts\activate
-echo    python run_pipeline.py data\sample_corpus.csv -o salida --title "Mi corpus"
+echo    python run_pipeline.py data\corpus.csv -o salida --title "Mi corpus"
 echo.
 echo  (Opcional) Mineria semantica con BERTopic:
 echo    .venv\Scripts\python.exe -m pip install bertopic sentence-transformers umap-learn hdbscan
-echo    python run_pipeline.py data\sample_corpus.csv -o salida --use-bertopic
+echo    python run_pipeline.py data\corpus.csv -o salida --use-bertopic
 echo ============================================================
 echo.
 pause
