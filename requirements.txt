@@ -1,0 +1,23 @@
+# ── Núcleo (obligatorio; el pipeline funciona offline con esto) ──
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+matplotlib>=3.7
+networkx>=3.1
+requests>=2.28
+
+# ── Normalización gramatical / lematización (flag --lematizar) ──
+spacy>=3.8,<3.9
+# Modelo de inglés (el corpus de Web of Science está en inglés).
+# Se instala automáticamente con: pip install -r requirements.txt
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+# (Opcional) Modelo de español, descomentar si el corpus es en español:
+# es_core_news_sm @ https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-3.8.0/es_core_news_sm-3.8.0-py3-none-any.whl
+# Si la version de spaCy no casa con el modelo, alternativa: python -m spacy download en_core_web_sm
+
+# ── Opcional: mineria semantica con BERTopic (descarga modelos de embeddings) ──
+# bertopic>=0.16
+# sentence-transformers>=2.2
+# umap-learn>=0.5
+# hdbscan>=0.8
+# keybert>=0.8

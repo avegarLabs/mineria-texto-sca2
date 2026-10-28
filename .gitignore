@@ -1,0 +1,56 @@
+# ── Entornos virtuales ──
+.venv/
+venv/
+env/
+ENV/
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ── Logs de instalación / ejecución ──
+*.log
+
+# ── Salidas generadas por el pipeline (regenerables con run_pipeline.py) ──
+salida/
+salida_*/
+
+# ── Modelos y cachés descargados (BERTopic / sentence-transformers / spaCy) ──
+.cache/
+models/
+*.pt
+*.bin
+*.safetensors
+
+# ── Secretos / configuración local ──
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# ── IDE / SO ──
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Herramientas locales de IA ──
+.claude/
+graphify-out/
+
+# ── Datos de entrada del usuario (cada usuario genera su propio corpus) ──
+data/**/*.md
+data/**/*.csv
+!data/**/.gitkeep
